@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #333;
+      margin: 40px;
+    }
+
+    .page-break {
+      page-break-after: always;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #004080;
+      padding-bottom: 10px;
+    }
+
+    .logo {
+      max-height: 60px;
+    }
+
+    .company-info {
+      text-align: right;
+      font-size: 12px;
+    }
+
+    .quote-title {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #004080;
+    }
+
+    .quote-meta, .client-info {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .quote-meta td, .client-info td {
+      padding: 4px 8px;
+      vertical-align: top;
+    }
+
+    .quote-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    .quote-table th, .quote-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    .quote-table th {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+
+    .totals {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .totals td {
+      padding: 6px 8px;
+    }
+
+    .totals .label {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 40px;
+      color: #004080;
+    }
+
+    .terms, .notes {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .signature-block {
+      margin-top: 60px;
+    }
+
+    .signature-line {
+      border-top: 1px solid #000;
+      width: 250px;
+      margin-top: 40px;
+    }
+
+    .signature-label {
+      margin-top: 5px;
+      font-size: 11px;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 10px;
+      color: #777;
+      text-align: center;
+    }
+
+    @media print {
+      .page-break {
+        display: block;
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page (Optional) -->
+  <div class="cover-page">
+    <div class="header">
+      <img src="./logo.png" alt="Company Logo" class="logo" />
+      <div class="company-info">
+        <strong>{{Company.Name}}</strong><br />
+        {{Company.Address}}<br />
+        {{Company.City}}, {{Company.State}} {{Company.Postcode}}<br />
+        {{Company.Country}}<br />
+        Phone: {{Company.Phone}}<br />
+        Email: {{Company.Email}}
+      </div>
+    </div>
+
+    <div class="quote-title">Quotation</div>
+
+    <table class="quote-meta">
+      <tr>
+        <td><strong>Quote Number:</strong> {{Quote.Number}}</td>
+        <td><strong>Date:</strong> {{Quote.Date}}</td>
+      </tr>
+      <tr>
+        <td><strong>Expiry Date:</strong> {{Quote.ExpiryDate}}</td>
+        <td><strong>Prepared By:</strong> {{Quote.Salesperson}}</td>
+      </tr>
+    </table>
+
+    <table class="client-info">
+      <tr>
+        <td>
+          <strong>Client:</strong><br />
+          {{Client.Name}}<br />
+          {{Client.Address}}<br />
+          {{Client.City}}, {{Client.State}} {{Client.Postcode}}<br />
+          {{Client.Country}}<br />
+          {{Client.Email}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Line Items Table -->
+  <div>
+    <div class="section-title">Quote Details</div>
+
+    <table class="quote-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{Quote.LineItems}}
+      </tbody>
+    </table>
+
+    <table class="totals">
+      <tr>
+        <td class="label" colspan="3">Subtotal:</td>
+        <td>{{Quote.SubTotal}}</td>
+      </tr>
+      <tr>
+        <td class="label" colspan="3">Tax:</td>
+        <td>{{Quote.Tax}}</td>
+      </tr>
+      <tr>
+        <td class="label" colspan="3"><strong>Total:</strong></td>
+        <td><strong>{{Quote.Total}}</strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Notes and Terms -->
+  <div>
+    <div class="section-title">Notes</div>
+    <div class="notes">
+      {{Quote.Notes}}
+    </div>
+
+    <div class="section-title">Terms & Conditions</div>
+    <div class="terms">
+      {{Quote.Terms}}
+    </div>
+  </div>
+
+  <!-- Signature Block -->
+  <div class="signature-block">
+    <div class="signature-line"></div>
+    <div class="signature-label">Authorized Signature</div>
+
+    <div class="signature-line" style="margin-top: 60px;"></div>
+    <div class="signature-label">Client Signature</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Thank you for your business!<br />
+    This quote is valid until {{Quote.ExpiryDate}}.
+  </div>
+
+</body>
+</html>

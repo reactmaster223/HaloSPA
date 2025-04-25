@@ -30,7 +30,6 @@
         border-collapse: collapse;
       }
       .proposal-details-title {
-        text-align: center;
         font-family: "poppins";
       }
       .styled-table {
@@ -131,11 +130,16 @@
 
   <body>
     <div class="container">
-      <h1 class="proposal-details-title">Your Proposal for: $QuoteTitle</h1>
+      <div
+        class="block-container"
+        style="display: flex; justify-content: flex-end; width: 100%"
+      >
+        <h1 class="proposal-details-title">Quote $QuoteTitle</h1>
+      </div>
       <div class="block-container">
         <div
           class="block-tile"
-          style="width: 213px; padding: 0px; border-radius: 15px"
+          style="width: 313px; padding: 0px; border-radius: 15px"
         >
           <div class="proposal-header-title">Prepared By</div>
           <p>$OtherIntegrations</p>
@@ -150,7 +154,7 @@
         </div>
         <div
           class="block-tile"
-          style="width: 213px; padding: 0px; border-radius: 15px"
+          style="width: 313px; padding: 0px; border-radius: 15px"
         >
           <div class="proposal-header-title">Prepared For</div>
           <div style="padding: 10px; line-height: 18px">

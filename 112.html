@@ -17,11 +17,8 @@
         text-align: center;
       }
       .proposal-header-title {
-        background-color: $orColour;
-        color: #ffffff;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        text-align: center;
+        color: #000000;
+        border-bottom: black 1px solid;
         padding: 5px;
       }
       .proposal-header-table {
@@ -36,7 +33,6 @@
         border-collapse: collapse;
         font-size: 0.9em;
         width: 100%;
-        border-radius: 15px;
         font-family: "Poppins";
       }
       .styled-table td > span {
@@ -48,16 +44,12 @@
         max-width: 28em;
         word-break: break-word;
       }
-      .styled-table thead th:first-child {
-        border-top-left-radius: 15px;
-      }
-      .styled-table thead th:last-child {
-        border-top-right-radius: 15px;
-      }
       .styled-table thead tr {
-        background-color: #0f1b31;
-        color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;
         text-align: left;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
       }
       .styled-table thead th {
         font-size: 1.25em;
@@ -66,12 +58,13 @@
       .styled-table td {
         padding: 12px 15px;
       }
-      .styled-table tbody tr:last-of-type {
-        border-bottom-right-radius: 15px;
+
+      .styled-table tr {
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
       }
       .table-container {
         margin: 25px 5px;
-        border-radius: 15px;
         overflow: hidden;
         box-shadow: rgba(36, 50, 66, 0.1) 0 5px 5px 0;
         background-color: white;
@@ -80,21 +73,16 @@
         display: flex;
       }
       .block-tile {
-        border: 1px solid #fafafa;
         margin: 20px auto;
         padding: 10px;
-        border-radius: 15px;
-        background-color: #fafafa;
         width: 320px;
       }
       .block-tile:hover {
         box-shadow: rgba(36, 50, 66, 0.1) 0 5px 5px 0;
-        border-radius: 8px;
         transition: 0.45s;
         z-index: 4;
       }
       .subtotal-table-container {
-        border-radius: 15px;
         margin-left: auto;
         padding: 10px;
         width: 20%;
@@ -103,7 +91,6 @@
       .subtotal-table {
         font-size: 0.9em;
         width: 100%;
-        border-radius: 15px;
         font-family: "Poppins";
         border-collapse: collapse;
       }
@@ -143,11 +130,10 @@
         <h1 class="proposal-details-title">Quote $QuoteTitle</h1>
       </div>
       <div class="block-container">
-        <div
-          class="block-tile"
-          style="width: 313px; padding: 0px; border-radius: 15px"
-        >
-          <div class="proposal-header-title">Prepared By</div>
+        <div class="block-tile" style="width: 313px; padding: 0px">
+          <div class="proposal-header-title" style="font-weight: bold">
+            Prepared By:
+          </div>
           <div style="padding: 10px; line-height: 18px">
             <strong>$QUOTEAGENT</strong><br />$AGENTJOBTITLE<br /><a
               href="$ORWEBSITE"
@@ -157,11 +143,10 @@
             $ORPHONE
           </div>
         </div>
-        <div
-          class="block-tile"
-          style="width: 313px; padding: 0px; border-radius: 15px"
-        >
-          <div class="proposal-header-title">Prepared For</div>
+        <div class="block-tile" style="width: 313px; padding: 0px">
+          <div class="proposal-header-title" style="font-weight: bold">
+            Prepared For :
+          </div>
           <div style="padding: 10px; line-height: 18px">
             Date: $QUOTEDATE <br />
             Valid until: $QUOTEEXPIRY<br />

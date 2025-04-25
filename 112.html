@@ -1,0 +1,305 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <style type="text/css" media="screen">
+      .container {
+        font-family: "Poppins";
+      }
+      .proposal-table-title {
+        font-size: 25px;
+        font-family: "poppins";
+        color: $orColour;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .proposal-header-title {
+        background-color: $orColour;
+        color: #ffffff;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        text-align: center;
+        padding: 5px;
+      }
+      .proposal-header-table {
+        width: 100%;
+        font-size: 13px;
+        border-collapse: collapse;
+      }
+      .proposal-details-title {
+        text-align: center;
+        font-family: "poppins";
+      }
+      .styled-table {
+        border-collapse: collapse;
+        font-size: 0.9em;
+        width: 100%;
+        border-radius: 15px;
+        font-family: "Poppins";
+      }
+      .styled-table td > span {
+        font-size: 10px !important;
+        display: inline-flex;
+      }
+      .styled-table thead tr th:first-child {
+        width: 28em;
+        max-width: 28em;
+        word-break: break-word;
+      }
+      .styled-table thead th:first-child {
+        border-top-left-radius: 15px;
+      }
+      .styled-table thead th:last-child {
+        border-top-right-radius: 15px;
+      }
+      .styled-table thead tr {
+        background-color: #0f1b31;
+        color: #ffffff;
+        text-align: left;
+      }
+      .styled-table thead th {
+        font-size: 1.25em;
+      }
+      .styled-table th,
+      .styled-table td {
+        padding: 12px 15px;
+      }
+      .styled-table tbody tr:last-of-type {
+        border-bottom-right-radius: 15px;
+      }
+      .table-container {
+        margin: 25px 5px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: rgba(36, 50, 66, 0.1) 0 5px 5px 0;
+        background-color: white;
+      }
+      .block-container {
+        display: flex;
+      }
+      .block-tile {
+        border: 1px solid #fafafa;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: #fafafa;
+        width: 320px;
+      }
+      .block-tile:hover {
+        box-shadow: rgba(36, 50, 66, 0.1) 0 5px 5px 0;
+        border-radius: 8px;
+        transition: 0.45s;
+        z-index: 4;
+      }
+      .subtotal-table-container {
+        border-radius: 15px;
+        margin-left: auto;
+        padding: 10px;
+        width: 20%;
+        background-color: #fafafa;
+      }
+      .subtotal-table {
+        font-size: 0.9em;
+        width: 100%;
+        border-radius: 15px;
+        font-family: "Poppins";
+        border-collapse: collapse;
+      }
+      .subtotal-table td:first-child {
+        text-align: left;
+      }
+      .subtotal-table td:last-child {
+        text-align: right;
+      }
+      .subtotal-table tr:last-child {
+        border-bottom: 0px;
+        border-top: 1px solid #dddddd;
+        padding-top: 5px;
+      }
+      .signature-details {
+        display: flex;
+        border-top: 1px solid #dddddd;
+        padding: 5px;
+        margin-top: 5px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="proposal-details-title">Your Proposal for: $QuoteTitle</h1>
+      <div class="block-container">
+        <div
+          class="block-tile"
+          style="width: 213px; padding: 0px; border-radius: 15px"
+        >
+          <div class="proposal-header-title">Prepared By</div>
+          <p>$OtherIntegrations</p>
+          <div style="padding: 10px; line-height: 18px">
+            <strong>$QUOTEAGENT</strong><br />$AGENTJOBTITLE<br /><a
+              href="$ORWEBSITE"
+              target="_blank"
+              >$ORNAME</a
+            ><br />
+            $ORPHONE
+          </div>
+        </div>
+        <div
+          class="block-tile"
+          style="width: 213px; padding: 0px; border-radius: 15px"
+        >
+          <div class="proposal-header-title">Prepared For</div>
+          <div style="padding: 10px; line-height: 18px">
+            Date: $QUOTEDATE <br />
+            Valid until: $QUOTEEXPIRY<br />
+            <strong>$USERNAME</strong> <br />$AREA <br />$DELIVERYADDRESS1
+            <br />$DELIVERYADDRESS2 <br />$DELIVERYADDRESS3
+            <br />$DELIVERYADDRESS4, $DELIVERYPOSTCODE
+          </div>
+        </div>
+      </div>
+      <!--[NONRECURRING]
+         <h3 class="proposal-table-title">One-Time Costs</h3>
+         <div class="table-container">
+	         <table class="styled-table">
+                           <thead>$DETAILSTABLEHEADER</thead>
+                           $QUOTELINESNONRECURRING
+                 </table>
+         </div>
+         <div class="subtotal-table-container">
+                  <table class="subtotal-table">
+                           <tr>
+                                    <td>Total Ex Tax</td>
+                                    <td>$QUOTESUBTOTALNONRECURRING</td>
+                           </tr>
+                           <tr>
+                                    <td>Tax</td>
+                                    <td>$QUOTETAXTOTALNONRECURRING</td>
+                           </tr>
+                           <tr>
+                                    <td style="font-weight:bold;">Total</td>
+                                    <td>$QUOTETOTALNONRECURRING</td>
+                           </tr>
+                  </table>
+         </div>
+[NONRECURRING]-->
+      <!--[WEEKLY]
+         <h3 class="proposal-table-title">Weekly Recurring Costs</h3>
+         <div class="table-container">
+	         <table class="styled-table">
+                           <thead>$DETAILSTABLEHEADER</thead>
+                           $QUOTELINESWEEKLY
+                 </table>
+         </div>
+         <div class="subtotal-table-container">
+                  <table class="subtotal-table">
+                           <tr>
+                                    <td>Total Ex Tax</td>
+                                    <td>$QUOTESUBTOTALWEEKLY</td>
+                           </tr>
+                           <tr>
+                                    <td>Tax</td>
+                                    <td>$QUOTETAXTOTALWEEKLY</td>
+                           </tr>
+                           <tr>
+                                    <td style="font-weight:bold;">Total</td>
+                                    <td>$QUOTETOTALWEEKLY</td>
+                           </tr>
+                  </table>
+         </div>
+[WEEKLY]-->
+      <!--[MONTHLY]
+         <h3 class="proposal-table-title">Monthly Recurring Costs</h3>
+         <div class="table-container">
+	         <table class="styled-table">
+                           <thead>$DETAILSTABLEHEADER</thead>
+                           $QUOTELINESMONTHLY
+                 </table>
+         </div>
+         <div class="subtotal-table-container">
+                  <table class="subtotal-table">
+                           <tr>
+                                    <td>Total Ex Tax</td>
+                                    <td>$QUOTESUBTOTALMONTHLY</td>
+                           </tr>
+                           <tr>
+                                    <td>Tax</td>
+                                    <td>$QUOTETAXTOTALMONTHLY</td>
+                           </tr>
+                           <tr>
+                                    <td style="font-weight:bold;">Total</td>
+                                    <td>$QUOTETOTALMONTHLY</td>
+                           </tr>
+                  </table>
+         </div>
+[MONTHLY]-->
+      <!--[ANNUAL]
+         <h3 class="proposal-table-title">Annual Recurring Costs</h3>
+         <div class="table-container">
+	         <table class="styled-table">
+                           <thead>$DETAILSTABLEHEADER</thead>
+                           $QUOTELINESANNUAL
+                 </table>
+         </div>
+         <div class="subtotal-table-container">
+                  <table class="subtotal-table">
+                           <tr>
+                                    <td>Total Ex Tax</td>
+                                    <td>$QUOTESUBTOTALANNUAL</td>
+                           </tr>
+                           <tr>
+                                    <td>Tax</td>
+                                    <td>$QUOTETAXTOTALANNUAL</td>
+                           </tr>
+                           <tr>
+                                    <td style="font-weight:bold;">Total</td>
+                                    <td>$QUOTETOTALANNUAL</td>
+                           </tr>
+                  </table>
+         </div>
+[ANNUAL]-->
+      <div class="block-container">
+        <div
+          class="block-tile"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+          "
+        >
+          $AGENTQUOTESIGNATURE
+          <div class="signature-details">
+            <div>
+              <strong> $QUOTEAGENT</strong> <br />
+              $AGENTJOBTITLE
+            </div>
+            <div style="margin-left: auto">$QUOTEDATE</div>
+          </div>
+        </div>
+        <div
+          class="block-tile"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+          "
+        >
+          <div>$QUOTESIGNATURE</div>
+          <div class="signature-details">
+            <div>
+              <strong>$USERNAME</strong> <br />
+              $USEROTHER2
+            </div>
+            <div style="margin-left: auto">$QUOTEAPPROVALDATE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
